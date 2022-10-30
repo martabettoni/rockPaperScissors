@@ -4,7 +4,7 @@ function getComputerChoice() {
     return randomPick[Math.floor(Math.random() * randomPick.length)];
 }
 
-function playRound (playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         return `It's a tie! You both picked ${playerSelection}`;
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
@@ -17,3 +17,7 @@ function playRound (playerSelection, computerSelection) {
         return `You lose! ${computerSelection} beats ${playerSelection}`;
     }
 }
+
+const computerSelection = getComputerChoice();
+const playerSelection = prompt("Choose between Rock, Paper or Scissors").toLowerCase();
+console.log(playRound(playerSelection, computerSelection));
